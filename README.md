@@ -7,6 +7,7 @@
 O **Primeiras Notícias Bot** automatiza a captura de parágrafos e a geração de imagens (snaps) a partir do portal de notícias *Primeiras Notícias Oficial*, e publica automaticamente os conteúdos no Instagram. Esse sistema foi desenvolvido para otimizar um processo repetitivo, garantindo agilidade e precisão, e servindo como uma poderosa ferramenta de automação para o setor de mídia digital.
 
 ## Funcionalidades
+![agurde](https://github.com/user-attachments/assets/321df044-96d5-4783-8161-f2c2e4ace996)
 
 - **Fluxo 1 – Captura de Parágrafos:**
   - Inicia com a inserção manual do ID da notícia.
