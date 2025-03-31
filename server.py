@@ -15,13 +15,13 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Configuração do Cloudinary com os dados da sua conta
 cloudinary.config(
-    cloud_name="dcigyfkwd",
-    api_key="178348975469445",
-    api_secret="x8gKGYkJJNH0uxkXDxvNuVjWHc0",
+    cloud_name="cloud-name",
+    api_key="api-key",
+    api_secret="chave-secreta",
     secure=True
 )
 
-# Pasta de downloads (ajuste conforme necessário)
+# Pasta de downloads 
 DOWNLOAD_FOLDER = r"C:\Users\Asus\Downloads"
 
 # Lista onde as notícias processadas são armazenadas
@@ -57,7 +57,7 @@ def obter_dados():
 @app.route('/imagens', methods=['GET'])
 def listar_imagens():
     try:
-        # Número de notícias processadas (ou parágrafos recebidos)
+        # Número de notícias processadas (parágrafos e títulos recebidos)
         quantidade_noticias = len(dados_temporarios)
         
         # Lista os arquivos que começam com "socialsnap_700pxx700px_"
@@ -159,9 +159,9 @@ def publicar_instagram():
     else:
         legenda = f"{titulo}\nLink na bio."
 
-    # Dados do Instagram Graph API - substitua "XXXXXX" pelos seus dados reais
-    ig_user_id = "17841404760785911"
-    access_token = "EAA325PSX9jUBOzb9h8fCNuQxzcZBjmQi4vjaOVq8B36kb2vvCZAZCEm5ZBlOzoDu3ZAsoIf7XALHI0GepH8xwDeYi971wp9qhj4NI1i18NAPwBYfhEd1khZBHZCezY0Bx58YPjcZBkldXfdooyMrsubGXqZBtTxsZBI1qqLRzwChei2tQqJX2ZCiY7cZBHFkqY57qwN3jnOMtd8F"
+    # Dados do Instagram Graph API 
+    ig_user_id = "id-usuario-instagram"
+    access_token = "sua-chave-privada"
 
     # --- Passo 1: Criar o container de mídia ---
     create_media_url = f"https://graph.facebook.com/v17.0/{ig_user_id}/media"
@@ -213,7 +213,7 @@ def background_publisher():
                 print("Nenhuma imagem disponível no momento.")
         else:
             print("Nenhuma notícia armazenada; aguardando...")
-        time.sleep(30)  # Espera 30 segundos antes de verificar novamente
+        time.sleep(15)  # Espera 15 segundos antes de verificar novamente
 
 if __name__ == '__main__':
     # Inicia a thread de publicação em background
